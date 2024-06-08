@@ -12,3 +12,6 @@ console.log(typeof(mob))
 console.log(typeof(isbig))
 console.log(typeof(user))
 console.log(typeof(err))
+
+
+// ***************  SUMMARY*********************

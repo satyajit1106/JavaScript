@@ -23,7 +23,7 @@ const temperature = 41
 
 // const balance = 1000
 
-// if (balance > 500) console.log("test"),console.log("test2");
+// if (balance > 500) console.log("test"),console.log("test2"); very unreadable code
 
 // if (balance < 500) {
 //     console.log("less than 500");

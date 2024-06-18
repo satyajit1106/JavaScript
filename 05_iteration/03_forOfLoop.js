@@ -5,7 +5,7 @@ const arr=[1,2,3,4,5]
 for (const iterator of arr) {        // here object refers to the array   
     console.log(iterator);           // (for of) loop automatically find the starting and ending,
 }
-
+// in forofloop it takes directly values
 
 const greeting = "Be strong,things will get better,it may be stormy now but it never rainss forever"
 
@@ -17,6 +17,8 @@ for (const iterator of greeting) {
 }
 
 // Maps :- no duplicate values
+// Maps are not iteratable
+
 const map=new Map()
 map.set('IN',"India")
 map.set('USA',"United States Of America")
@@ -39,9 +41,3 @@ map.set('IN',"India")
 for (const [key,value] of map) {
     console.log(key ,":-", value);
 }
-
-const container={
-    name:"satyajit",
-    brach:"ISE"
-}
-

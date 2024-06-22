@@ -44,4 +44,32 @@ buttons.forEach(function (button) {
 
 ```
 
-## project 2
+## Project 2 {BMI Calculator}
+
+``` javascript
+console.log("satyajit")
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // to get the value of the selected id using querySelector we use ".value"
+  // we get the value in the form of string in querySelector and to convert into the int we parseInt.
+
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if (height == '' || height < 0 || isNaN(height)) {
+    results.innerHTML = 'Please provide the correct height';
+  }else if (weight == '' || weight < 0 || isNaN(weight)) {
+    results.innerHTML = 'Please provide the correct weight';
+  }else{
+    const bmi = ( weight / (( height*height )/ 10000 )).toFixed(2);
+    results.innerHTML = `<span>${bmi}</span>` 
+  }
+  // innerHTML is used to print 
+});
+
+```

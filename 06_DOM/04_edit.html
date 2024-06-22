@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="language">
+        <li >javascript</li>
+        <li >cpp</li>
+    </ul>
+</body>
+
+<script>
+    // create the element 
+
+    function addLanguage(langName) {
+        const li = document.createElement('li');    // created the element li
+        li.innerHTML = `${langName}`                // now add it to innerHTML whole tree is traversed and then added
+        document.querySelector('.language').appendChild(li)     // now append it
+    }
+    addLanguage("typeScript") // this creates the optimization issue as it need to traverse the whole tree to add ele
+    addLanguage("python")
+
+
+    function addOptimizedLang(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))   // yaha textnode create kiya aur directly inject kar diya
+        document.querySelector('.language').appendChild(li) // parent node select karke child ko append kar diya
+    }
+    addOptimizedLang("goLang")  // no traversal,directly injected
+// _______________________________________________________________________________________________________
+
+    // edit the element in the DOM
+
+    const secondLang = document.querySelector("li:nth-child(2)")    // selected the second element in ul using nth-child
+    // secondLang.innerHTML = "Mojo"
+    const newLi = document.createElement('li')      // creted whole new element and then insert into the place
+    newLi.textContent = "Mojo"  // textContent and innerHTML works in the same way 
+    secondLang.replaceWith(newLi) // replacewith replaces the python with Mojo
+
+    const firstLang = document.querySelector("li:first-Child")  // li:first-child is used for acessing the first element
+    firstLang.outerHTML = '<li>broLanguage</li>'    // in outerHTML we give the whole HTML syntax
+// _______________________________________________________________________________________________________
+
+    // Remove the elements in the list
+
+    const lastLang = document.querySelector("li:last-Child")
+    lastLang.remove()
+</script>
+</html>

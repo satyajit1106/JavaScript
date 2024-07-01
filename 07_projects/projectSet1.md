@@ -197,3 +197,36 @@ function newGame() {
 }
 
 ```
+
+## Project 6 { Genereate Random background color }
+
+```javascript
+
+// generate the random color
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+// variable to change the background color
+let newColor;
+let startChangingColor = function () {
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+
+  newColor = setInterval(changeBgColor, 2000);
+};
+
+let stopChangingColor = function () {
+  clearInterval(newColor);
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+```

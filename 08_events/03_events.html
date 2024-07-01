@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <h1>Hello</h1>
+    <button id="start">Start</button>
+    <button id="end">End</button>
+</body>
+
+<script>
+
+    // task was to print the name and the date when clicked the start button and stop when pressed the stop button
+
+    // we first made the function the does the work of printing the date and name
+    let work = function(){
+        console.log("hello time is: ",Date.now());
+    }
+
+    // then declared the variable to store the interval
+    let startInterval
+
+    // selected the id and then added the event listner and add setinterval property that would print the date and the name regularly after the certain mentioned interval
+    document.querySelector('#start').addEventListener('click',function(){
+        startInterval = setInterval(work,2000)
+    })
+
+    // after the printing is done number of times we then stop the process using the clearInterval function by passing the name of the setInterval function
+    document.querySelector('#end').addEventListener('click',function(){
+        clearInterval(startInterval)
+    })
+
+</script>
+</html>

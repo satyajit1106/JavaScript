@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async javascript</title>
+</head>
+<body style=" background-color: black; color: aliceblue;">
+    <h1 title="heading">Hello Master</h1>
+    <button id="stop">STOP</button>
+</body>
+
+<script>
+
+    // executes after the interval once
+    setTimeout(() => {
+        console.log("satyajit")
+    }, 2000);
+
+
+    // works exactly same as the normal setTimeout function but here we pass the referance of out handlerFunction
+    // let handlerFunction = () => {
+    //     console.log("satyajit")
+    // }
+    // setTimeout(handlerFunction, timeout);
+
+
+    // will continiously execute after the given interval
+    // setInterval(() => {
+    //     console.log("satyajitinterval");
+    // }, 5000);
+
+    // this will change the status of the heading tag after 5 sec
+    let changeName = function(){
+        document.querySelector('h1').innerHTML = "satyajitPlaylist"
+    }
+    const changeStatus = setTimeout(changeName, 5000);
+
+    // we have the clearTimeout function that is use in case we dont want timeout to happen in come certain condition like here while we press the stop button
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeStatus);
+    })
+</script>
+</html>

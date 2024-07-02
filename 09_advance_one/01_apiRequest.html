@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api Request</title>
+</head>
+<body>
+    Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+
+<script>
+    const requestUrl = 'https://api.github.com/users/satyajit1106';
+    
+    // XMLHttpRequest() :- are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.
+
+    const xhr = new XMLHttpRequest(); 
+    // created the object.The constructor initializes an XMLHttpRequest. It must be called before any other method calls.
+
+    xhr.open('Get',requestUrl); 
+    // first we enter the get,post,send payload etc in the request
+    
+    // to track the change in state we use "" .readyState "" and to continiously track the changes in the state we  use "" onreadystatechange ""
+    // as the state change this function executes
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText); 
+            // this.responseText is the json data so we need to parse this json data into object type to access its elements that is only possible through parsing it into object type
+
+            console.log(typeof data);
+            console.log(data);
+            console.log(data.name);
+        }
+    }
+
+    // after writing open() it don't automatically get called so we need
+    xhr.send()
+
+    // when we send the request the status code changes 
+
+// ___________________________________________________________________________________________________
+
+// console.log is the browser dubegging tool , javascript contain some arithmetic operation some loops etc , like document.   operation this are all injected by the runtime of the javascript 
+
+// javascript work through the Runtime environment like nodeJs , with the Browser... nodeJs is also the implementation of V8 Engine and whole engine is also written in C++ , javascript also runs with the C++ 
+// V8 engine also gives you lot of debugging tools, api access 
+
+
+</script>
+</html>

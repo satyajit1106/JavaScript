@@ -30,7 +30,7 @@ new Promise(function(resolve,reject){
 
 const promiseThree = new Promise(function(resolve,reject){
     setTimeout(() => {
-        resolve({userName: "satyajit", email: "satyajit.discord@gmail.com"})
+        resolve({userName: "satyajit", email: "satyajit.discord@gmail.com"})    // we can send object, array, etc
     }, 1000);
 })
 promiseThree.then(function(user){

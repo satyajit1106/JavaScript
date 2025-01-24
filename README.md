@@ -93,8 +93,8 @@ This repository is my **learning playground**, but feel free to fork it and cont
 ## 📬 Connect with Me  
 
 🔗 **GitHub**: [Satyajit Patra](https://github.com/satyajit1106)  
-📧 **Email**: (satyajitpatra4002@gmail.com)  
-💼 **LinkedIn**: https://www.linkedin.com/in/satyajit-patra-b0801a242/
+📧 **Email**: satyajitpatra4002@gmail.com
+💼 **LinkedIn**: [Satyajit Patra](https://www.linkedin.com/in/satyajit-patra-b0801a242/)
 
 🚀 Keep Coding! Keep Exploring! 💡🔥  
 
